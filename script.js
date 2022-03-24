@@ -19,6 +19,7 @@ function fillShape(id){
         console.log(fields);
         draw();
         checkForWin();
+        checkForDraw();
     }
 }
 
@@ -41,6 +42,8 @@ function restart() {
     gameOver = false;
     fields = [];
     document.getElementById('gameover').classList.add('d-none');
+    document.getElementById('restart-button').classList.add('d-none');
+    document.getElementById('game-draw').classList.add('d-none');
     document.getElementById('restart-button').classList.add('d-none');
 
     for (let i = 1; i < 9; i++) {
@@ -94,6 +97,18 @@ function checkForWin(){
         gameOver = true;
         setTimeout(function(){
             document.getElementById('gameover').classList.remove('d-none');
+            document.getElementById('restart-button').classList.remove('d-none');
+        }, 1500);
+    }
+}
+
+
+function checkForDraw(){
+    let cleanArray = fields.filter(function () { return true })
+    if(cleanArray.length == 9) {
+        console.log('unentschieden');
+        setTimeout(function(){
+            document.getElementById('game-draw').classList.remove('d-none');
             document.getElementById('restart-button').classList.remove('d-none');
         }, 1500);
     }

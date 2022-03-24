@@ -75,10 +75,6 @@ td:hover {
     left: 1.5rem;
 }
 
-.d-none {
-    display: none;
-}
-
 .primary-container {
     position: relative;
 }
@@ -115,6 +111,27 @@ td:hover {
     z-index: 2;
     animation: zoomIn 225ms ease-in-out;
     object-fit: cover;
+}
+
+.game-draw {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.d-none {
+    display: none;
 }
 
 @keyframes zoomIn {
